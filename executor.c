@@ -52,7 +52,7 @@ char *get_command(void)
 
 char **tokenize_command(const char *cmd)
 {
-	int i;
+	int i = 0;
 	char *token;
 	char **args = malloc(50 * sizeof(char *));
 
@@ -110,6 +110,11 @@ void exec_cmd(const char *cmd)
 		free_args(args);
 		return;
 	}
+	if (strcmp(args[0], "exit") == 0) 
+	{
+        free_args(args);
+        exit_shell();
+    } 
 
 	child_pid = fork();
 
@@ -137,8 +142,8 @@ void exec_cmd(const char *cmd)
 		{
 		int status;
 
-		if (waitpid(child_pid, &status, 0) == -1)
-
+	/*	if (waitpid(child_pid, &status, 0) == -1) */
+		if (waitpid(child_pid, &status, 0) < 0)
 		{
 			perror("Waitpid Error");
 			free_args(args);
