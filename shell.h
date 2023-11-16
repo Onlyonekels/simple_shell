@@ -45,5 +45,21 @@ int main_shell(void);
 
 char *get_command(void);
 
+/**
+ * tokenize_command - Tokenize a command into an array of strings.
+ *
+ * @cmd: The command to tokenize.
+ *
+ * Return: An array of strings representing the tokens of the command.
+ */
+
+char **tokenize_command(const char *cmd);
+
+/**
+ * free_args - Free the memory allocated for an array of strings.
+ *
+ * @args: The array of strings to free.
+ */
+void free_args(char **args);
 
 #endif
