@@ -66,10 +66,10 @@ void free_args(char **args);
  *exit_shell - executes the exit builtin function.
  *
  */
-static inline void exit_shell(void) 
+static inline void exit_shell(void)
 {
-    printf("Exiting shell.\n");
-    exit(EXIT_SUCCESS);
+	printf("Exiting shell.\n");
+	exit(EXIT_SUCCESS);
 }
 
 #endif
