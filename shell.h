@@ -11,9 +11,38 @@
 
 extern char **environ;
 
-void gets_cmd(char *cmd,size_t size);
+/**
+ * gets_cmd - Read a line of input from the user.
+ *
+ * @cmd: Buffer to store the input.
+ * @size: Size of the buffer.
+ */
+
+void gets_cmd(char *cmd, size_t size);
+
+/**
+ * exec_cmd - Execute a command in a child process.
+ *
+ * @cmd: The command to execute.
+ */
+
 void exec_cmd(const char *cmd);
+
+/**
+ * main_shell - Entry point of the shell program.
+ *
+ * Return: Always 0.
+ */
+
 int main_shell(void);
+
+/**
+ * get_command - Read a line of input from the user.
+ *
+ * Return: A dynamically allocated string containing the user's input.
+ *         NULL is returned in case of failure or EOF (Ctrl+D).
+ */
+
 char *get_command(void);
 
 
