@@ -110,11 +110,11 @@ void exec_cmd(const char *cmd)
 		free_args(args);
 		return;
 	}
-	if (strcmp(args[0], "exit") == 0) 
+	if (strcmp(args[0], "exit") == 0)
 	{
-        free_args(args);
-        exit_shell();
-    } 
+		free_args(args);
+		exit_shell();
+	}
 
 	child_pid = fork();
 
