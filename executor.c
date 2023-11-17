@@ -99,7 +99,7 @@ void free_args(char **args)
  */
 
 void exec_cmd(const char *cmd)
-	{
+{
 	pid_t child_pid;
 	char **args = tokenize_command(cmd);
 
@@ -162,5 +162,5 @@ void exec_cmd(const char *cmd)
 
 		free_args(args);
 	}
-}
 
+}
